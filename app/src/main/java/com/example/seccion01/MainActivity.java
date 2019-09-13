@@ -27,8 +27,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, Secondactivity.class);
                 intent.putExtra("greeter", GREETER);
                 startActivity(intent);
-
-                //esto es una prueba
             }
         });
     }
