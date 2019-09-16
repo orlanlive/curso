@@ -83,9 +83,9 @@ public class ThirdActivity extends AppCompatActivity {
                     if (result == PackageManager.PERMISSION_GRANTED) {
                         //Concedio su permiso
                         String phoneNumber = editTextPhone.getText().toString();
-                        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+phoneNumber));
+                        Intent intentCall = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+phoneNumber));
                         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) return;
-                        startActivity(intent);
+                        startActivity(intentCall);
                     }
                     else {
                         //No concedio su permiso
@@ -94,9 +94,9 @@ public class ThirdActivity extends AppCompatActivity {
                 }
 
                 break;
-                default:
-                    super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-                    break;
+            default:
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+                break;
         }
     }
 
